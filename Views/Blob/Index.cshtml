@@ -1,0 +1,70 @@
+﻿@model IEnumerable<string>
+@inject ABCRetailCloud.Services.BlobStorageService blob
+
+<h2>Files</h2>
+
+<form method="post" enctype="multipart/form-data" asp-action="Upload">
+    <input type="file" name="file" class="form-control" />
+    <button class="btn btn-primary mt-2">Upload</button>
+</form>
+
+<div class="row mt-4">
+    @foreach (var file in Model)
+    {
+        var url = blob.GetUrl(file);
+        var isImage = file.EndsWith(".png") ||
+        file.EndsWith(".jpg") ||
+        file.EndsWith(".jpeg") ||
+        file.EndsWith(".gif") ||
+        file.EndsWith(".webp");
+
+        <div class="col-md-3">
+            <div class="card p-2">
+
+                @if (isImage)
+                {
+                    <img src="@url"
+                         class="img-fluid"
+                         data-bs-toggle="modal"
+                         data-bs-target="#imageModal"
+                         data-src="@url" />
+                }
+                else
+                {
+                    <a href="@url" target="_blank">
+                        📥 Download @file
+                    </a>
+                }
+
+                <p class="text-center">@file</p>
+
+            </div>
+        </div>
+    }
+</div>
+
+<!-- IMAGE MODAL -->
+
+<div class="modal fade" id="imageModal">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+
+            <div class="modal-body text-center">
+                <img id="modalImage" class="img-fluid" />
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    var imageModal = document.getElementById('imageModal');
+
+    imageModal.addEventListener('show.bs.modal', function (event) {
+
+        var img = event.relatedTarget;
+        var src = img.getAttribute('data-src');
+
+        document.getElementById("modalImage").src = src;
+    });
+</script>

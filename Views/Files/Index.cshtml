@@ -1,0 +1,20 @@
+
+@model IEnumerable<string>
+@{ Layout="_Layout"; }
+<a asp-action="Generate" class="btn btn-warning mb-3">
+    Generate Demo Files
+</a>
+
+
+<h2>File Storage Logs</h2>
+
+<form method="post" enctype="multipart/form-data" action="/Files/Upload">
+<input type="file" name="file"/>
+<button class="btn btn-primary">Upload</button>
+</form>
+
+<ul class="list-group mt-4">
+@foreach(var f in Model){
+<li class="list-group-item">@f</li>
+}
+</ul>

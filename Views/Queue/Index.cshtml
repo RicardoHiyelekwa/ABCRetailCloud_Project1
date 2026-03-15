@@ -1,0 +1,41 @@
+@model IEnumerable<string>
+@{
+    Layout = "_Layout";
+}
+
+<a asp-action="Generate" class="btn btn-warning mb-3">
+    Generate Demo Messages
+</a>
+
+<meta http-equiv="refresh" content="5" />
+
+<h2>Order Processing Queue</h2>
+
+<div class="mb-3">
+
+    <form method="post" asp-action="Send">
+
+        <input name="message" class="form-control" placeholder="Enter queue message" />
+
+        <button class="btn btn-success mt-2">
+            Send Message
+        </button>
+
+    </form>
+
+    <a asp-action="Generate" class="btn btn-primary mt-2">
+        Generate Demo Messages
+    </a>
+
+</div>
+
+<ul class="list-group mt-4">
+
+    @foreach (var m in Model)
+    {
+        <li class="list-group-item">
+            @m
+        </li>
+    }
+
+</ul>

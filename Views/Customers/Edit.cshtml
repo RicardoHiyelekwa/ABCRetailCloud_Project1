@@ -1,0 +1,32 @@
+﻿@model ABCRetailCloud.Models.Customer
+
+<h2>Edit Customer</h2>
+
+<form asp-action="Edit">
+
+    <input type="hidden" asp-for="RowKey" />
+    <input type="hidden" asp-for="PartitionKey" />
+
+    <div class="mb-3">
+
+        <label>Name</label>
+
+        <input asp-for="Name" class="form-control" />
+
+    </div>
+
+    <div class="mb-3">
+
+        <label>Email</label>
+
+        <input asp-for="Email" class="form-control" />
+
+    </div>
+
+    <button class="btn btn-primary">
+
+        Update
+
+    </button>
+
+</form>
