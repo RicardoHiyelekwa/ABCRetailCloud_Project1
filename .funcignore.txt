@@ -1,0 +1,9 @@
+# Ignorar pastas da Web App
+Controllers/
+Views/
+wwwroot/
+*.cshtml
+
+# Ignorar arquivos de configuração da Web App
+appsettings.json
+appsettings.Development.json

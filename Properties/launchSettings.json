@@ -1,12 +1,9 @@
 {
   "profiles": {
-    "ABCRetailCloudProject1_PRO_UI": {
+    "ABCRetailCloudProject1_Functions": {
       "commandName": "Project",
-      "launchBrowser": true,
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "applicationUrl": "https://localhost:53799;http://localhost:53800"
+      "commandLineArgs": "--port 7237",
+      "launchBrowser": false
     }
   }
 }

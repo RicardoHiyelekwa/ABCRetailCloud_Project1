@@ -1,0 +1,10 @@
+{
+  "description": {
+    "language": "dotnet-isolated",
+    "extensions": [ ".dll" ],
+    "defaultExecutablePath": "dotnet",
+    "defaultWorkerPath": "ABCRetailCloudProject1_PRO_UI.dll",
+    "workerIndexing": "true",
+    "canUsePlaceholder": true
+  }
+}

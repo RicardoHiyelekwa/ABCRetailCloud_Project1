@@ -15,4 +15,13 @@
 <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http" Version="3.3.0" />
 <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="2.0.7" />
 </ItemGroup>
+
+<ItemGroup>
+  <EditorConfigFiles Remove="C:\Users\ricar\Downloads\Integrated_Project2_Solution\ST100500838_CLDV7112_Project1\ABCRetailCloud_Project1\.editorconfig" />
+</ItemGroup>
+
+<ItemGroup>
+  <None Include="C:\Users\ricar\Downloads\Integrated_Project2_Solution\ST100500838_CLDV7112_Project1\ABCRetailCloud_Project1\.editorconfig" />
+  <None Include="properties\publishprofiles\st10500838-aeploy.pubxml.user" />
+</ItemGroup>
 </Project>
